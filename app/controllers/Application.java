@@ -9,7 +9,6 @@ import play.data.Form;
 import static play.data.Form.*;
 import java.util.Date;
 import play.data.DynamicForm;
-import play.Logger;
 
 
 
@@ -138,7 +137,6 @@ public class Application extends Controller {
 		DynamicForm input = Form.form();
 		input = input.bindFromRequest(params);
 		String text = input.data().get("input");
-		Logger.debug("input"+text);
 
 		//検索
 		List<Message> dataSet = Message.find.where().eq("name",text).findList();
