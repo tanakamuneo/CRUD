@@ -1,0 +1,19 @@
+@(header: String, dataSet: List[Message])
+
+@main("単一モデル") {
+	
+	<div>
+	<hr>
+	<h1>@header</h1>
+		<a href="/add">新規</a>
+		<a href="/item">投稿編集</a>
+		<a href="/delete">削除</a>
+		<a href="/find">投稿者検索</a>
+	</hr>
+	<p>DBサンプル(単一モデル)</p>
+	<pre-wrap>@dataSet</pre-wrap>
+	</div>
+}
+
+
+

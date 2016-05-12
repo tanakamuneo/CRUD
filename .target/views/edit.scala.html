@@ -1,0 +1,29 @@
+
+@(header: String, msg: String, id:Long, myForm: Form[Message])
+
+@main(header) {
+	<div>
+	<h1>@header</h1>
+
+		<a href="/">一覧に戻る</a>
+		<a href="/add">新規</a>
+		<a href="/item">投稿編集</a>
+		<a href="find">投稿者検索</a>
+		<a href="/delete">削除</a>
+
+		<hr>
+		<p>@msg</p>
+		@helper.form(action = routes.Application.update) {
+			<input type="hidden" name="id" id="id" value="@id">
+			@helper.inputText(myForm("name"),args='_label->"name",'_help->"Required")
+			@helper.inputText(myForm("mail"),args='_label->"mail",'_help->"Email")
+			@helper.textarea(myForm("message"), args='rows->2,'cols->20,'_label->"message",'_help->"constraint.pattern")
+			<input type="submit">
+		}
+
+
+	</div>
+}
+
+
+

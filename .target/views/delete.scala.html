@@ -1,0 +1,33 @@
+
+
+@(header: String, msg:String, myForm: Form[Message])
+
+@main(header) {
+	
+<div>
+<h1>@header</h1>
+	<a href="/">一覧に戻る</a>
+	<a href="/add">新規</a>
+	<a href="/item">投稿編集</a>
+
+<hr>
+<p>@msg</p>
+@helper.form(action = routes.Application.remove) {
+	@helper.inputText(myForm("id"),args='_label->"id")
+	<input type="hidden" value="hoge" name="name">
+	<input type="hidden" value="hoge" name="message">
+	<input type="submit">
+}
+</div>
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+@(header: String, myForm: Form[String], dataSet:List[Message])
+
+@main(header) {
+	
+	<div>
+		<h1>@header</h1>
+			<a href="/">一覧に戻る</a>
+			<a href="/add">新規</a>
+			<a href="/item">投稿編集</a>
+			<a href="/delete">削除</a>
+
+			<hr>
+
+			<p>投稿の検索</p>
+			@helper.form(action = routes.Application.find) {
+				@helper.inputText(myForm("input"), args='_label->"input",'_help->"Required",'_error->"Required")
+				<input type="submit">
+			}
+			</hr>
+
+				<pre-wrap>@dataSet</pre-wrap>
+
+	</div>
+
+}
+
+
+
+
+
+
+
