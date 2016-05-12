@@ -1,4 +1,4 @@
-name := "Ebean"
+name := "CRUD"
 
 version := "1.0-SNAPSHOT"
 
